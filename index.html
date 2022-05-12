@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Le ShiFuMi de Zokkyen</title>
+</head>
+<body>
+    <h1>Le ShiFuMi de Zokkyen</h1>
+    
+    <!-- Modal part -->
+    <div class="modContent">
+        <button id="modBtn">Régles du jeu</button>
+        <div id="myModal" class="modal">
+            
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img class="shifumiImgMod" src="assets/img/shifumi.png" alt="ShiFuMi">
+                <h4>Le déroulement du jeu</h4>
+                <p>Lors d’une partie de Shi Fu Mi :</p>
+                <ul>
+                    <li>les joueurs mettent la main participante derrière le dos et se font faces,</li>
+                    <li>Les joueurs comptent jusqu’à trois (Un-Deux-Trois !) et montrent en même temps le choix de leur signe,</li>
+                    <li>Le gagnant est désigné, il est possible de faire plusieurs manches.</li>
+                </ul>
+                <h4>Qui est le vainqueur ?</h4>
+                <p>Voici en détail les conditions de victoire :</p>
+                <ul>
+                    <li>Les <strong>ciseaux</strong> coupent la <strong>feuille</strong></li>
+                    <li>La <strong>pierre</strong> brise les <strong>ciseaux</strong></li>
+                    <li>La <strong>feuille</strong> recouvre la <strong>pierre</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+    <!-- Game part -->    
+    <div id="gameContent">
+        <div class="shiFuMiPict">
+        <img id="rock" class="imgGame" src="assets/img/pierre.png" alt="Pierre">
+        <img id="paper" class="imgGame" src="assets/img/papier.png" alt="Papier">
+        <img id="scissors" class="imgGame" src="assets/img/ciseaux.png" alt="Ciseaux">             
+        </div>
+
+        <div class="countContainer">
+            <div class="countContent">
+                <label class="textInputCSS" for="victoryUser">Victoire de l'utilisateur : </label>
+                <span class="textInputCSS" id="victoryUser"></span>
+            </div>
+
+            <div class="countContent">
+                <label class="textInputCSS" for="victoryComp">Victoire de l'ordinateur : </label>
+                <span class="textInputCSS" id="victoryComp"></span>           
+            </div>
+
+            <div class="countContent">
+                <label class="textInputCSS" for="nbEgality">Egalité : </label>
+                <span class="textInputCSS" id="nbEgality"></span>           
+            </div>
+
+            <div class="countContent">
+                    <label class="textInputCSS" for="nbGame">Match total : </label>
+                    <span class="textInputCSS" id="nbGame"></span>
+            </div>            
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Audio part  -->
+    <img id="soundAmbiance" src="assets/img/volumeoff.png" alt="Sound Button">
+    <audio id="audio">
+        <source src="assets/sound/soundchinese.mp3" type="audio/mpeg">
+    </audio>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
