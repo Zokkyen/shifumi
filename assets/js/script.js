@@ -20,8 +20,6 @@ let play = () => {
     }
 }
 
-audio.play();
-
 // Function Random number
 let ramdomFct = () => {
     return Math.floor((Math.random() * 3));
@@ -77,7 +75,7 @@ modBtn.addEventListener('click', () => {
 })
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 span.addEventListener('click', () => {
     myModal.style.display = "none";
 })
