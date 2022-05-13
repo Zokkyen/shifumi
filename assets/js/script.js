@@ -6,7 +6,7 @@ let nbGameCount = 0;
 let alwaysOne = 0;
 
 // Function of music player
-let play = () => {
+/*let play = () => {
     const audio = document.querySelector("#audio");
     if(soundAmbiance.src == 'http://127.0.0.1:5500/assets/img/volumeoff.png' || soundAmbiance.src == 'assets/img/volumeoff.png'){
         soundAmbiance.src = 'assets/img/volume.png';
@@ -18,7 +18,46 @@ let play = () => {
         audio.pause();
         audio.currentTime = 0;
     }
+}*/
+// Set audio or not when the user click on the sound button
+/*let soundAmbiance = document.getElementById('soundAmbiance');
+soundAmbiance.addEventListener('click', play);*/
+
+
+
+let soundOnOrOff = 0;
+
+const toggleSound = () => {
+    soundChoice.classList.toggle('soundOff');
+    soundChoice.classList.toggle('soundOn');
+    console.log(soundChoice.classList.contains('soundOff'))
+    if (soundChoice.classList.contains('soundOff')) {
+        soundOnOrOff = 0;
+    } else {
+        soundOnOrOff = 1;
+    }
+
+    console.log(soundOnOrOff);
 }
+
+soundChoice.addEventListener('click', toggleSound);
+
+let saberSound = document.getElementById('saberSound');
+if (soundOnOrOff == 1) {
+    saberSound.play();
+    console.log('ok')
+}
+else {
+    saberSound.pause();
+    saberSound.currentTime = 0;
+    console.log('nok')
+}
+
+
+
+
+
+
 
 // Function Random number
 let ramdomFct = () => {
@@ -61,9 +100,7 @@ let createComputerImage = (numb) => {
     gameContent.appendChild(compShiFuMi);
 }
 
-// Set audio or not when the user click on the sound button
-let soundAmbiance = document.getElementById('soundAmbiance');
-soundAmbiance.addEventListener('click', play);
+
 
 // Set a predifine img for the Computer
 let compShiFuMi = document.createElement("img");
