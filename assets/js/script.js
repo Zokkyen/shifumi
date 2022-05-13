@@ -49,6 +49,33 @@ let createComputerImage = (numb) => {
             botImg.src = 'assets/img/ciseaux.png';
             break;
     }
+
+    const refreshRate = 20;
+    const maxYPosition = 160;
+    let speedX = 2;
+    let positionX = 290;
+
+    let interLoop = setInterval(() => {
+        positionX = positionX - speedX;
+        if (positionX < maxYPosition || positionY > 290) {
+            speedX = speedX * (-1);
+        }
+        botImg.style.top = positionX + 'px';
+    }, refreshRate);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // When the user clicks on the button, open the modal
