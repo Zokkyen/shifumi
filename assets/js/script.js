@@ -6,58 +6,21 @@ let nbGameCount = 0;
 let alwaysOne = 0;
 
 // Function of music player
-/*let play = () => {
-    const audio = document.querySelector("#audio");
-    if(soundAmbiance.src == 'http://127.0.0.1:5500/assets/img/volumeoff.png' || soundAmbiance.src == 'assets/img/volumeoff.png'){
-        soundAmbiance.src = 'assets/img/volume.png';
-        audio.volume = 1; // 0.5 = 50% 1 = 100%
-        audio.play();
-    }
-    else{
-        soundAmbiance.src = 'assets/img/volumeoff.png';
-        audio.pause();
-        audio.currentTime = 0;
-    }
-}*/
-// Set audio or not when the user click on the sound button
-/*let soundAmbiance = document.getElementById('soundAmbiance');
-soundAmbiance.addEventListener('click', play);*/
-
-
-
-let soundOnOrOff = 0;
-
 const toggleSound = () => {
     soundChoice.classList.toggle('soundOff');
     soundChoice.classList.toggle('soundOn');
-    console.log(soundChoice.classList.contains('soundOff'))
+    
     if (soundChoice.classList.contains('soundOff')) {
-        soundOnOrOff = 0;
-    } else {
-        soundOnOrOff = 1;
+        saberSound.pause();
+        saberSound.currentTime = 0;
+    } 
+    else{
+        saberSound.play();
     }
-
-    console.log(soundOnOrOff);
 }
-
-soundChoice.addEventListener('click', toggleSound);
 
 let saberSound = document.getElementById('saberSound');
-if (soundOnOrOff == 1) {
-    saberSound.play();
-    console.log('ok')
-}
-else {
-    saberSound.pause();
-    saberSound.currentTime = 0;
-    console.log('nok')
-}
-
-
-
-
-
-
+soundChoice.addEventListener('click', toggleSound);
 
 // Function Random number
 let ramdomFct = () => {
@@ -75,36 +38,18 @@ let returnAllValueInput = (user, comp, egal, total) => {
 /* Create computer image result 
 0:stone 1:paper 2:scissors*/
 let createComputerImage = (numb) => {
-    if(alwaysOne == 0){
-        compShiFuMi.id = 'comp' + alwaysOne;
-        alwaysOne++;
-    }
-    else {
-        gameContent.removeChild(compShiFuMi);
-        compShiFuMi = document.createElement("img");
-        compShiFuMi.className = 'imgGame';
-        compShiFuMi.id = 'comp' + alwaysOne;
-        alwaysOne--;
-    }
     switch(numb){
         case 0 :
-            compShiFuMi.src = 'assets/img/pierre.png';           
+            botImg.src = 'assets/img/pierre.png';           
             break;
         case 1 :
-            compShiFuMi.src = 'assets/img/papier.png';
+            botImg.src = 'assets/img/papier.png';
             break;
         case 2 :
-            compShiFuMi.src = 'assets/img/ciseaux.png';
+            botImg.src = 'assets/img/ciseaux.png';
             break;
     }
-    gameContent.appendChild(compShiFuMi);
 }
-
-
-
-// Set a predifine img for the Computer
-let compShiFuMi = document.createElement("img");
-compShiFuMi.className = 'imgGame';
 
 // When the user clicks on the button, open the modal
 modBtn.addEventListener('click', () => {
