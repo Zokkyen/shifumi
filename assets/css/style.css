@@ -4,6 +4,20 @@
     src: url('../font/go3v2.ttf');
 }
 
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 body {
     background: url('../img/chinese1.jpg');
     background-position: center;
@@ -150,7 +164,6 @@ div.carousel-indicators button {
     width: 100%;
 }
 
-
 .imgGame {
     width:15vh;
     height: 100%;
@@ -160,46 +173,29 @@ div.carousel-indicators button {
 
 #rock:hover, #paper:hover, #scissors:hover {
     filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
 
 /*@media (min-width: 576px) {
 }*/
 
-@media (min-width: 768px) {
-    .carouselCard {
-        flex-direction: row;
-        height: 50vh;
-        width: auto;
+/*@media (min-width: 768px) {
+    .carouselContent {
+        height: 25vh;
+        width: 100%;
     }
-    .PortFolioPicture {
-        height: 50vh;
-        width: 40vw;
+    .imgGame {
+        width:30vh;
+        height: 100%;
+        bottom: 0px;
         object-fit: cover;
-        border-radius: 5px 5px 0px 0px;
+        object-position: center center;
     }
-}
+}*/
 
-
-@media (min-width: 1200px) {
-    .carouselCard {
-        height: 50vh;
-        width: auto;
-    }
-    .PortFolioPicture {
-        height: 50vh;
-        width: 40vw;
-    }
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon,
-    div.carousel-indicators button {
-        width: 4rem;
-        height: 4rem;
-    }
-    .carousel-indicators [data-bs-target] {
-        width: 50px;
-        height: 5px;
-    }
-}
+/*@media (min-width: 1200px) {
+}*/
 
 .countContainer {
     display: flex;
@@ -221,15 +217,14 @@ div.carousel-indicators button {
 }
 
 .textInputCSS {
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: black;
 }
 
 @media (min-width: 576px) {
-    .countContainer {
-
-    }
+    /*.countContainer {
+    }*/
 
     .textInputCSS {
         font-size: 1.5rem;
@@ -239,37 +234,18 @@ div.carousel-indicators button {
         width: 10%;
         height: 10%;
     }
-    body {
-        /*background-position: 0% 0%;
-        background-size: 100% 100%;*/
-    }
-
+    /*body {
+        background-position: 0% 0%;
+        background-size: 100% 100%;
+    }*/
 }
 
-@media (min-width: 768px) {
-
+/*@media (min-width: 768px) {
 }
-
 @media (min-width: 992px) {
-
 }
-
 @media (min-width: 1200px) {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 /* Son icon */
 
@@ -298,15 +274,14 @@ div.carousel-indicators button {
     background-position: center center;
 }
 
-@media (min-width: 576px) {
-    /*#soundChoice {
+/*@media (min-width: 576px) {
+    #soundChoice {
         position: absolute;
         width: 50px;
         bottom: 20px;
         left: 20px;
-    }*/
-}
-
+    }
+}*/
 
 /*-------------- Footer --------------*/
 footer {
@@ -320,4 +295,11 @@ footer {
 
 .copy {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.myLogo {
+    width: 15%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
