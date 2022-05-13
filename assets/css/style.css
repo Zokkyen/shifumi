@@ -181,10 +181,10 @@ div.carousel-indicators button {
 
 
 .imgGame {
-    width: 20vh;
+    width:15vh;
     height: 100%;
     object-fit: cover;
-    object-position: 100% 100%;
+    object-position: 50% 50%;
 }
 
 #rock:hover, #paper:hover, #scissors:hover {
