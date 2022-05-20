@@ -11,12 +11,12 @@
 </head>
 <body>
     <h1>Le ShiFuMi de Zokkyen</h1>
-    
+
     <!-- Modal Info -->
     <div class="modContent">
         <button id="modBtn">Régles du jeu</button>
         <div id="myModal" class="modal">
-            
+
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">X</span>
@@ -39,39 +39,14 @@
         </div>
     </div>
 
-    <!-- Game part -->    
-    <div id="gameContent">
+    <!-- Game part -->
+    <div class="container-fluid mt-3 mb-3" id="gameContent">
 
-        <!-- Choose part -->
-        <div class="container-fluid mt-2 mb-2">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-touch="true" data-bs-interval="false">
-                <div class="carousel-inner">
-
-                    <!-- Rock -->
-                    <div class="carousel-item carouselContent active">
-                            <img id="rock" class="imgGame" src="assets/img/pierre.png" alt="Pierre">
-                    </div>
-
-                    <!-- Paper -->
-                    <div class="carousel-item carouselContent">
-                            <img id="paper" class="imgGame" src="assets/img/papier.png" alt="Papier">
-                    </div>
-
-                    <!-- Scissors -->
-                    <div class="carousel-item carouselContent">
-                            <img id="scissors" class="imgGame" src="assets/img/ciseaux.png" alt="Ciseaux"> 
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+        <!-- Choice of the player -->
+        <div class="container-fluid d-flex justify-content-center m-3">
+            <img id="rock" class="imgGame" src="assets/img/pierre.png" alt="Pierre">
+            <img id="paper" class="imgGame" src="assets/img/papier.png" alt="Papier">
+            <img id="scissors" class="imgGame" src="assets/img/ciseaux.png" alt="Ciseaux">
         </div>
 
         <!-- Score part -->
@@ -83,18 +58,18 @@
 
             <div class="countContent">
                 <label class="textInputCSS" for="victoryComp">Victoire de l'ordinateur : </label>
-                <span class="textInputCSS" id="victoryComp"></span>           
+                <span class="textInputCSS" id="victoryComp"></span>
             </div>
 
             <div class="countContent">
                 <label class="textInputCSS" for="nbEgality">Egalité : </label>
-                <span class="textInputCSS" id="nbEgality"></span>           
+                <span class="textInputCSS" id="nbEgality"></span>
             </div>
 
             <div class="countContent">
                     <label class="textInputCSS" for="nbGame">Match total : </label>
                     <span class="textInputCSS" id="nbGame"></span>
-            </div>            
+            </div>
         </div>
 
         <!-- Bot mouvement image -->

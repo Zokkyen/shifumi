@@ -56,7 +56,7 @@ h1 {
     font-size: 1.5rem;
     white-space: nowrap;
     width: calc(20vh*5vw);
-    height: calc(5vh*5vw);   
+    height: calc(5vh*5vw);
     /*margin-top: 2%;*/
 }
 
@@ -92,7 +92,7 @@ h4 {
 }
 
 div.modal-content p, div.modal-content li {
-    font-size: 0.8rem;   
+    font-size: 0.8rem;
 }
 
 /* The Close Button */
@@ -120,7 +120,7 @@ div.modal-content p, div.modal-content li {
         text-align: left;
     }
     div.modal-content p, div.modal-content li {
-        font-size: 1.2rem;   
+        font-size: 1.2rem;
     }
     .modal {
         left: 0;
@@ -165,8 +165,9 @@ div.carousel-indicators button {
 }
 
 .imgGame {
-    width:15vh;
+    width:12vh;
     height: 100%;
+    margin: 3%;
     object-fit: cover;
     object-position: center center;
 }
@@ -199,17 +200,17 @@ div.carousel-indicators button {
 
 .countContainer {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: url('../img/parchemin.png');
     background-position: center;
     background-size: 100% 100%;
     width: 100%;
-    padding-top: 10%;
+    padding-top: 6%;
     padding-bottom: 10%;
-    /*margin-top: 5%;
-    margin-bottom: 5%;*/
+
+
 }
 
 .countContent {
