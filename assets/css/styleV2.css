@@ -1,0 +1,105 @@
+/*-------------- Ecran principal --------------*/
+@font-face {
+    font-family: 'ChineseFont';
+    src: url('../font/go3v2.ttf');
+}
+
+body {
+    background: url('../img/dojo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* HEADER */
+
+h1 {
+    font-family: 'ChineseFont';
+    font-size: 2.5em;
+    color: #E5AD26;
+    text-shadow: 0px 0px 10px black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.infoButton {
+    position: absolute;
+    filter: invert(84%) sepia(16%) saturate(2071%) hue-rotate(341deg) brightness(88%) contrast(106%);
+    width: 30px;
+    top: 100px;
+    right: 20px;
+}
+
+/* MAIN */
+
+.robotResult {
+    height: 30vh;
+}
+
+.playerChoice{
+    height: 35vh;
+}
+
+.row span {
+    font-family: 'ChineseFont';
+    color: #E5AD26;
+    width: 20px;
+    height: 20px;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 10px black;
+}
+
+.row img {
+    filter: invert(15%) sepia(12%) saturate(2995%) hue-rotate(340deg) brightness(93%) contrast(93%);
+    width: 80%;
+
+    object-fit: contain;
+    align-items: end;
+    margin-top: 20px;
+}
+
+.scoreGame {
+    height: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+
+@media (min-width: 1200px) {
+
+}
