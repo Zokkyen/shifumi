@@ -16,6 +16,15 @@ body {
 
 /* HEADER */
 
+.header {
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 h1 {
     font-family: 'ChineseFont';
     font-size: 2.5em;
@@ -31,43 +40,43 @@ h1 {
     position: absolute;
     filter: invert(84%) sepia(16%) saturate(2071%) hue-rotate(341deg) brightness(88%) contrast(106%);
     width: 30px;
-    top: 100px;
+    top: 10vh;
     right: 20px;
 }
 
 /* MAIN */
 
 .robotResult {
-    height: 30vh;
+    height: 20vh;
+}
+
+.animationFight {
+    height: 24vh;
 }
 
 .playerChoice{
-    height: 35vh;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.row span {
-    font-family: 'ChineseFont';
-    color: #E5AD26;
-    width: 20px;
-    height: 20px;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 10px black;
-}
-
-.row img {
+.playerChoice>img {
     filter: invert(15%) sepia(12%) saturate(2995%) hue-rotate(340deg) brightness(93%) contrast(93%);
-    width: 80%;
-
+    width: 25%;
     object-fit: contain;
     align-items: end;
-    margin-top: 20px;
 }
 
 .scoreGame {
-    height: 30%;
+    height: 16vh;
 }
 
+/* FOOTER */
 
+.footer {
+    height: 5vh;
+}
 
 
 
