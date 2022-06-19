@@ -5,10 +5,12 @@
 }
 
 body {
+    font-family: 'ChineseFont';
     background: url('../img/dojo.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-color: black;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -24,11 +26,9 @@ body {
     align-items: center;
 }
 
-
 h1 {
-    font-family: 'ChineseFont';
     font-size: 2.5em;
-    color: #E5AD26;
+    color: #796344;
     text-shadow: 0px 0px 10px black;
     text-align: center;
     padding-top: 20px;
@@ -36,25 +36,54 @@ h1 {
     margin: 0;
 }
 
-.infoButton {
+.header img {
     position: absolute;
-    filter: invert(84%) sepia(16%) saturate(2071%) hue-rotate(341deg) brightness(88%) contrast(106%);
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
     width: 30px;
     top: 10vh;
     right: 20px;
 }
 
+.popover,
+.popover-body {
+    color: #796344;
+    background-color: black;
+    font-size: 0.8rem;
+    border-radius: 10px !important;
+    border: 1px solid black;
+}
+
+.popover .popover-arrow::before,
+.popover .popover-arrow::after {
+    border-color: transparent !important;
+    background-color: transparent !important;
+    border-top-color: transparent !important;
+    border-bottom-color: black !important;
+}
+
 /* MAIN */
-
-.robotResult {
-    height: 20vh;
+/* Animation fight container */
+.animFightContainer {
+    width: 90%;
+    height: 44vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.animationFight {
-    height: 24vh;
+.animFight {
+    width: 100%;
+    height: 90%;
+    background: rgba( 121, 99, 68, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.playerChoice{
+/* Player choice container */
+.playerChoice {
     height: 20vh;
     display: flex;
     justify-content: space-around;
@@ -62,14 +91,65 @@ h1 {
 }
 
 .playerChoice>img {
-    filter: invert(15%) sepia(12%) saturate(2995%) hue-rotate(340deg) brightness(93%) contrast(93%);
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
     width: 25%;
     object-fit: contain;
     align-items: end;
 }
 
+.shakeAnim {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite ;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
+/* Score game container */
 .scoreGame {
-    height: 16vh;
+    height: 15vh;
+    padding: 5px;
+}
+
+.scoreGame div {
+    color: #796344;
+}
+
+.scoreGame span {
+    width: 10%;
+    background-color: #796344;
+    border-radius: 5px;
+    height: 3vh;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 5px;
 }
 
 /* FOOTER */
@@ -78,37 +158,40 @@ h1 {
     height: 5vh;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 576px) {
-
+.footer p {
+    color: #796344;
 }
 
-@media (min-width: 768px) {
-
-}
-
-@media (min-width: 992px) {
-
+.footer img {
+    position: absolute;
+    bottom: 60%;
+    right: 0;
+    transform: translate(-60%, );
+    width: 80px;
 }
 
 
-@media (min-width: 1200px) {
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+
+@media (min-width: 1200px) {}
