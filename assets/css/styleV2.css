@@ -40,7 +40,7 @@ h1 {
     position: absolute;
     filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
     width: 30px;
-    top: 10vh;
+    top: 12vh;
     right: 20px;
 }
 

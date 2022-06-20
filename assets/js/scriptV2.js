@@ -1,3 +1,11 @@
+/* Initialize all scores */
+
+let victoryUserCount = 0;
+let victoryCompCount = 0;
+let nbEgalityCount = 0;
+let nbGameCount = 0;
+let alwaysOne = 0;
+
 /* Initialize the popover */
 
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
@@ -17,29 +25,21 @@ pChoice.forEach(element => {
     });
 });
 
-pChoice.forEach(element => {
-    element.addEventListener('mouseenter', () => {
+/* Player choose one of three */
 
-        /*let arrayChild = element.parentNode.children;
-        for (let index = 0; index < arrayChild.length; index++) {
-            arrayChild[index].pause();
-            console.log(arrayChild[index]);
-        }
-        arrayChild.forEach(e => {
-            e.pause();
-            console.log(e);
-        });*/
+pChoice.forEach((key, element) => {
 
-        element.classList.add("shakeAnim");
+    //console.log(key)
+    //console.log(element)
 
-        //console.log(arrayChild)
 
-    })
-});
+    //key.addEventListener('click', (element) => {
 
-pChoice.forEach(element => {
-    element.addEventListener('mouseleave', () => {
-        //element.start();  
-        element.classList.remove("shakeAnim");
-    })
+        //element.parentNode.children[key]
+
+        //console.log(element.parentNode.children[key])
+
+
+        //console.log(element.parentNode.children.)
+    //});
 });
