@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style_mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width: 1000px)" href="assets/css/style_desktop.css" />
     <title>Le ShiFuMi de Zokkyen</title>
 </head>
 
@@ -96,8 +97,8 @@
             <img src="assets/img/scissors.png" alt="Scissors Choice" class="pChoice" id="scissors" />
         </div>
 
-        <!-- Score game -->
-        <div class="container-fluid scoreGame">
+        <!-- Score game Mobile -->
+        <div class="container-fluid scoreGameMobile">
             <div class="d-flex p-1 align-items-center">
                 <p class="m-0">Victoire de l'utilisateur :</p>
                 <span id="userScore"></span>
@@ -115,6 +116,28 @@
                 <span id="totalScore"></span>
             </div>
         </div>
+
+        <!-- Score game Desktop -->
+        <div class="container-fluid scoreGameDesktop">    
+                <div class="d-flex p-1 align-items-center">
+                    <p class="m-0">Victoire de l'utilisateur :</p>
+                    <span id="userScore"></span>
+                </div>
+                <div class="d-flex p-1 align-items-center">
+                    <p class="m-0">Victoire de l'ordinateur :</p>
+                    <span id="robotScore"></span>
+                </div>
+    
+                <div class="d-flex p-1 align-items-center">
+                    <p class="m-0">Egalité :</p>
+                    <span id="equalScore"></span>
+                </div>
+                <div class="d-flex p-1 align-items-center">
+                    <p class="m-0">Match total :</p>
+                    <span id="totalScore"></span>
+                </div>
+        </div>
+
     </main>
 
     <footer>

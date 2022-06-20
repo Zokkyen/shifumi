@@ -1,0 +1,274 @@
+/*-------------- Ecran principal --------------*/
+@font-face {
+    font-family: 'ChineseFont';
+    src: url('../font/go3v2.ttf');
+}
+
+body {
+    font-family: 'ChineseFont';
+    background: url('../img/dojo_desktop.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #796344;
+    text-shadow: 0px 0px 10px black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+#infoButton {
+    position: absolute;
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
+    width: 30px;
+    top: 50px;
+    right: 80px;
+}
+
+#resetButton {
+    position: absolute;
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
+    width: 30px;
+    top: 50px;
+    left: 80px;
+}
+
+.popover,
+.popover-body {
+    color: #796344;
+    background-color: black;
+    font-size: 0.8rem;
+    border-radius: 10px !important;
+    border: 1px solid black;
+}
+
+.popover .popover-arrow::before,
+.popover .popover-arrow::after {
+    border-color: transparent !important;
+    background-color: transparent !important;
+    border-top-color: transparent !important;
+    border-bottom-color: black !important;
+}
+
+/* MAIN */
+/* Modal using to get player name */
+
+.modal-content {
+    background-color: #796344;
+}
+
+.modal-body input {
+    border-radius: 5px;
+}
+
+/* Animation fight container */
+.animFightContainer {
+    width: 50%;
+    height: 44vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.animFight {
+    width: 100%;
+    height: 90%;
+    background: rgba( 121, 99, 68, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentUserName {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+#robotName {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: black;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+#playerForFight {
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
+    width: 20%;
+    object-fit: contain;
+    display: none;
+}
+
+#robotForFight {
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
+    width: 20%;
+    object-fit: contain;
+    display: none;
+}
+
+#animContainer {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    white-space: nowrap;
+    z-index: -1;
+    width: 100px; /* Need a specific value to work */
+}
+
+
+/* Player choice container */
+.playerChoice {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.playerChoice>img {
+    filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
+    width: 10%;
+    object-fit: contain;
+    align-items: end;
+}
+
+.shakeAnim {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite ;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* Score game container */
+.scoreGameDesktop{
+    display: flex;
+    height: auto;
+    width: 100%;
+    height: 15vh;
+    padding: 5px;
+    align-items: flex-end;
+    padding-left: 10px;
+}
+
+.scoreGameMobile{
+    display: none;
+}
+
+.scoreGameDesktop div {
+    color: #796344;
+}
+
+.scoreGameDesktop p {
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.scoreGameDesktop span {
+    width: 5vh;
+    background-color: #796344;
+    border-radius: 5px;
+    height: 3vh;
+    color: black;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 30px;
+}
+
+/* FOOTER */
+
+.footer {
+    height: 5vh;
+}
+
+.footer p {
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    color: #796344;
+}
+
+.footer img {
+    width: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+
+@media (min-width: 1200px) {}

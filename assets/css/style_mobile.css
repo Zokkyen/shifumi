@@ -148,7 +148,6 @@ h1 {
     width: 100px; /* Need a specific value to work */
 }
 
-
 /* Player choice container */
 .playerChoice {
     height: 20vh;
@@ -195,18 +194,22 @@ h1 {
     }
 }
 
-
 /* Score game container */
-.scoreGame {
+.scoreGameMobile {
+    display: block;
     height: 15vh;
     padding: 5px;
 }
 
-.scoreGame div {
+.scoreGameDesktop{
+    display: none;
+}
+
+.scoreGameMobile div {
     color: #796344;
 }
 
-.scoreGame span {
+.scoreGameMobile span {
     width: 10%;
     background-color: #796344;
     border-radius: 5px;
@@ -236,29 +239,3 @@ h1 {
     transform: translate(-60%, );
     width: 80px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 576px) {}
-
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
-
-
-@media (min-width: 1200px) {}
