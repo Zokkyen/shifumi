@@ -1,150 +1,261 @@
-// Variables
+/* Initialize all scores */
+
 let victoryUserCount = 0;
 let victoryCompCount = 0;
 let nbEgalityCount = 0;
 let nbGameCount = 0;
-let alwaysOne = 0;
+let playerName = "";
 
-// Function of music player
-const toggleSound = () => {
-    soundChoice.classList.toggle('soundOff');
-    soundChoice.classList.toggle('soundOn');
-    
-    if (soundChoice.classList.contains('soundOff')) {
-        saberSound.pause();
-        saberSound.currentTime = 0;
-    } 
-    else{
-        saberSound.play();
-    }
-}
+/* Animation of the two selections : user and robot */
 
-let saberSound = document.getElementById('saberSound');
-soundChoice.addEventListener('click', toggleSound);
+let fightAnimation = (player, robot, result) => {
 
-// Function Random number
-let ramdomFct = () => {
-    return Math.floor((Math.random() * 3));
-}
-
-// Function return all numbers to HTML
-let returnAllValueInput = (user, comp, egal, total) => {
-    victoryUser.innerHTML = user.toString();
-    victoryComp.innerHTML = comp.toString();
-    nbEgality.innerHTML = egal.toString();
-    nbGame.innerHTML = total.toString();
-}
-
-/* Create computer image result 
-0:stone 1:paper 2:scissors*/
-let createComputerImage = (numb) => {
-    switch(numb){
-        case 0 :
-            botImg.src = 'assets/img/pierre.png';           
+    switch(player) {
+        case 'rock' : 
+            playerForFight.src = "assets/img/rock.png";
             break;
-        case 1 :
-            botImg.src = 'assets/img/papier.png';
+        case 'paper' : 
+            playerForFight.src = "assets/img/paper.png";
             break;
-        case 2 :
-            botImg.src = 'assets/img/ciseaux.png';
+        case 'scissors' :
+            playerForFight.src  = "assets/img/scissors.png";
             break;
     }
-    /*const refreshRate = 20;
-    const maxYPosition = 160;
-    let speedX = 2;
-    let positionX = 290;
 
-    let interLoop = setInterval(() => {
-        positionX = positionX - speedX;
-        if (positionX < maxYPosition || positionY > 290) {
-            speedX = speedX * (-1);
-        }
-        botImg.style.top = positionX + 'px';
-    }, refreshRate);*/
-}
-
-// When the user clicks on the button, open the modal
-modBtn.addEventListener('click', () => {
-    myModal.style.display = "block";
-})
-
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
-span.addEventListener('click', () => {
-    myModal.style.display = "none";
-})
-
-// When the user clicks anywhere outside of the modal, close it
-window.addEventListener('click', (event) => {
-    if (event.target == myModal) {
-        myModal.style.display = "none";
+    switch(robot) {
+        case 'rock' :
+            robotForFight.src = "assets/img/rock.png";
+            break;
+        case 'paper' : 
+            robotForFight.src = "assets/img/paper.png";
+            break;
+        case 'scissors' : 
+            robotForFight.src = "assets/img/scissors.png";
+            break;
     }
-})
 
-// First return of values
-returnAllValueInput(victoryUserCount, victoryCompCount, nbEgalityCount, nbGameCount);
-
-// Event when user clicks on one of image
-
-rock.addEventListener('click', () => {
-    let returnRandom = ramdomFct();
-    createComputerImage(returnRandom);
-    if(returnRandom == 2){
-        alert("C'est gagné !");
-        victoryUserCount++;
-        nbGameCount++;
+    switch(result) {
+        case 'win' :
+            animContainer.innerText = "Gagné !!!";
+            break;
+        case 'loose' : 
+            animContainer.innerText = "Perdu ..";
+            break;
+        case 'equality' : 
+            animContainer.innerText = "Egalité :)";
+            break;
     }
-    else if (returnRandom == 0){
-        alert("Egalité !");
+
+    playerForFight.style.display = "block";
+    robotForFight.style.display = "block";
+
+    playerForFight.animate([
+        { transform: 'translate(-200px)'},
+        { transform: 'translate(-100px)' },
+        { transform: 'translate(-50px)' },
+        { transform: 'translate(0px)' },
+        { transform: 'translate(-80px)' },
+        { transform: 'translate(0px)' },
+        { transform: 'translate(-50px)' },
+        { transform: 'translate(0px)' },
+    ], {
+    duration: 1500
+    });
+
+    robotForFight.animate([
+        { transform: 'translate(200px)'},
+        { transform: 'translate(100px)' },
+        { transform: 'translate(50px)' },
+        { transform: 'translate(0px)' },
+        { transform: 'translate(80px)' },
+        { transform: 'translate(0px)' },
+        { transform: 'translate(50px)' },
+        { transform: 'translate(0px)' },
+    ], {
+    duration: 1500
+    });
+
+    setTimeout(() => {
+        playerForFight.style.display = "none";
+        robotForFight.style.display = "none"; 
+        animContainer.innerText = "";
+    }, "2000");
+
+};
+
+/* Function of fight with user and robot values */
+
+let fightResult = (userChoice, compChoice) => {
+    nbGameCount++;
+    if((userChoice == "paper") && (compChoice == "paper")) {
         nbEgalityCount++;
-        nbGameCount++;
+        fightAnimation("paper", "paper", "equality");
+    }
+    else if((userChoice == "paper") && (compChoice == "rock")) {
+        victoryUserCount++;
+        fightAnimation("paper", "rock", "win");
+    }
+    else if((userChoice == "paper") && (compChoice == "scissors")) {
+        victoryCompCount++;
+        fightAnimation("paper", "scissors", "loose");
+    }
+    else if((userChoice == "rock") && (compChoice == "paper")) {
+        victoryCompCount++;
+        fightAnimation("rock", "paper", "loose");
+    }
+    else if((userChoice == "rock") && (compChoice == "rock")) {
+        nbEgalityCount++;
+        fightAnimation("rock", "rock", "equality");
+    }
+    else if((userChoice == "rock") && (compChoice == "scissors")) {
+        victoryUserCount++;
+        fightAnimation("rock", "scissors", "win");
+    }
+    else if((userChoice == "scissors") && (compChoice == "paper")) {
+        victoryUserCount++;
+        fightAnimation("scissors", "paper", "win");
+    }
+    else if((userChoice == "scissors") && (compChoice == "rock")) {
+        victoryCompCount++;
+        fightAnimation("scissors", "rock", "loose");
+    }
+    else if((userChoice == "scissors") && (compChoice == "scissors")) {
+        nbEgalityCount++;
+        fightAnimation("scissors", "scissors", "equality");
     }
     else {
-        alert("C'est perdu...");
-        victoryCompCount++;
-        nbGameCount++;
+        console.log("Little mistake ?");
     }
-    returnAllValueInput(victoryUserCount, victoryCompCount, nbEgalityCount, nbGameCount);
+};
+
+/* Robot choice selection random */
+
+let robotRandom = () => {
+    switch( Math.floor((Math.random() * 3))) {
+        case 0 : 
+            return "rock";
+        break;
+        case 1 : 
+            return "paper";
+            break;
+        case 2 : 
+            return "scissors";
+            break;      
+    }
+};
+
+/* Save score at each displaying */
+
+let saveScoreLocal = () => {
+    localStorage.removeItem('victoryUserCount');
+    localStorage.removeItem('victoryCompCount');
+    localStorage.removeItem('nbEgalityCount');
+    localStorage.removeItem('nbGameCount');
+
+    localStorage.setItem('victoryUserCount', victoryUserCount);
+    localStorage.setItem('victoryCompCount', victoryCompCount);
+    localStorage.setItem('nbEgalityCount', nbEgalityCount);
+    localStorage.setItem('nbGameCount', nbGameCount);
+}
+
+/* Display dynamically the score at each game */
+
+let displayScore = () => {
+    userScore.innerText = victoryUserCount;
+    robotScore.innerText = victoryCompCount;
+    equalScore.innerText = nbEgalityCount;
+    totalScore.innerText = nbGameCount;
+}
+
+/* Initialize display at the beginning */
+
+displayScore();
+
+/* Open different modal on the launch in function of existing or new player */
+const newPlayerModal = new bootstrap.Modal(newPlayer, focus);
+const existPlayerModal = new bootstrap.Modal(existPlayer, focus);
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    /* If there is a new player */
+    if(((localStorage.getItem('playerName')) === null) && ((localStorage.getItem('victoryUserCount')) === null) && ((localStorage.getItem('victoryCompCount')) === null) && ((localStorage.getItem('nbEgalityCount')) === null) && ((localStorage.getItem('nbGameCount')) === null)) {     
+        newPlayerModal.show();    
+    }
+
+    else {
+        /* If there is an existing player */
+        playerName = localStorage.getItem('playerName');
+        victoryUserCount = localStorage.getItem('victoryUserCount');
+        victoryCompCount = localStorage.getItem('victoryCompCount');
+        nbEgalityCount = localStorage.getItem('nbEgalityCount');
+        nbGameCount = localStorage.getItem('nbGameCount');       
+        
+        /* Refresh display with existing score */
+        displayScore();
+
+        currentUserName.innerText = playerName;
+        putPlayerName.innerText = `Bon retour ${playerName}, prêt pour de nouvelles parties ?`;
+        existPlayerModal.show();
+
+        setTimeout(() => {
+            existPlayerModal.hide();
+        }, "3000");
+    }
 });
 
-paper.addEventListener('click', () => {
-    let returnRandom = ramdomFct();
-    createComputerImage(returnRandom);
-    if(returnRandom == 0){
-        alert("C'est gagné !");
-        victoryUserCount++;
-        nbGameCount++;
-    }
-    else if (returnRandom == 1){
-        alert("Egalité !");
-        nbEgalityCount++;
-        nbGameCount++;
-    }    
-    else {
-        alert("C'est perdu...");
-        victoryCompCount++;
-        nbGameCount++;
-    }
-    returnAllValueInput(victoryUserCount, victoryCompCount, nbEgalityCount, nbGameCount);
+/* When open modal for new user, save his name and score */
+playerValid.addEventListener('click', () => {
+    localStorage.setItem('playerName', getPlayerName.value);
+    localStorage.setItem('victoryUserCount', 0);
+    localStorage.setItem('victoryCompCount', 0);
+    localStorage.setItem('nbEgalityCount', 0);
+    localStorage.setItem('nbGameCount', 0);
+    currentUserName.innerText = getPlayerName.value;
 });
 
-scissors.addEventListener('click', () => {
-    let returnRandom = ramdomFct();
-    createComputerImage(returnRandom);
-    if(returnRandom == 1){
-        alert("C'est gagné !");
-        victoryUserCount++;
-        nbGameCount++;
-    }
-    else if (returnRandom == 2){
-        alert("Egalité !");
-        nbEgalityCount++;
-        nbGameCount++;
-    }
-    else {
-        alert("C'est perdu...");
-        victoryCompCount++;
-        nbGameCount++;
-    }
-    returnAllValueInput(victoryUserCount, victoryCompCount, nbEgalityCount, nbGameCount);
+/* Initialize the popover */
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+/* Animation of player selection */
+
+let pChoice = document.querySelectorAll('.pChoice');
+pChoice.forEach(element => {
+    element.animate([
+        { transform: 'scale(0.7)' },
+        { transform: 'scale(0.9)' },
+        { transform: 'scale(0.7)' }
+    ], {
+        duration: 1000,
+        iterations: Infinity
+    });
+
+    /* WHen user choose a selection we call fight function, 
+    display score and animation of the fight */
+
+    element.addEventListener('click', () => {
+        fightResult(element.id, robotRandom());
+        displayScore();
+        saveScoreLocal();
+    });
+});
+
+/* Reset data of user when click on reset button */
+
+resetButton.addEventListener('click', () => {
+    localStorage.clear();
+    victoryUserCount = 0;
+    victoryCompCount = 0;
+    nbEgalityCount = 0;
+    nbGameCount = 0;
+    playerName = "";
+    currentUserName.innerText = "";
+    animContainer.innerText = "";
+
+    displayScore();
+
+    setTimeout(() => {
+        newPlayerModal.show(); 
+    }, "1000");
 });
