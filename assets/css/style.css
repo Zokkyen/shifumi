@@ -125,7 +125,7 @@ h1 {
 
 #playerForFight {
     filter: invert(37%) sepia(60%) saturate(247%) hue-rotate(356deg) brightness(95%) contrast(96%);
-    width: 25%;
+    width: 30%;
     object-fit: contain;
     display: none;
 }
