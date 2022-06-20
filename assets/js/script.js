@@ -161,10 +161,22 @@ let saveScoreLocal = () => {
 /* Display dynamically the score at each game */
 
 let displayScore = () => {
-    userScore.innerText = victoryUserCount;
-    robotScore.innerText = victoryCompCount;
-    equalScore.innerText = nbEgalityCount;
-    totalScore.innerText = nbGameCount;
+    let userScore = document.querySelectorAll('.userScore');
+    userScore.forEach(element => {
+        element.innerText = victoryUserCount;
+    });
+    let robotScore = document.querySelectorAll('.robotScore');
+    robotScore.forEach(element => {
+        element.innerText = victoryCompCount;
+    });
+    let equalScore = document.querySelectorAll('.equalScore');
+    equalScore.forEach(element => {
+        element.innerText = nbEgalityCount;
+    });
+    let totalScore = document.querySelectorAll('.totalScore');
+    totalScore.forEach(element => {
+        element.innerText = nbGameCount;
+    });
 }
 
 /* Initialize display at the beginning */
